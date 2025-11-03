@@ -1,0 +1,7 @@
+﻿namespace Homework2Lib
+{
+    public class Money
+    {
+
+    }
+}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Homework2Lib
+namespace Homework2
 {
     public class Product
     {

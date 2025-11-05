@@ -14,6 +14,9 @@ namespace Homework2
 
     public class Money
     {
+        // Дозволяємо лише формат: ціле додатне число, можливо крапка + 1–2 цифри після неї
+        public static Regex amountRegex = new Regex(@"^\d+(\.\d{1,2})?$");
+
         private int integerPart;
         private int pennies;
 
@@ -66,12 +69,7 @@ namespace Homework2
 
         public void SetAmount(string input)
         {
-            // Дозволяємо лише формат: ціле додатне число, можливо крапка + 1–2 цифри після неї
-            Regex regex = new Regex(@"^\d+(\.\d{1,2})?$");
-
-            if (!regex.IsMatch(input))
-                throw new InvalidDataException("Invalid money format." +
-                    "Must be a positive number with up to two decimal digits, using a dot as separator.");
+            CheckAmount(input);
 
             // Ділимо рядок за крапкою на цілу частину та копійки
             string[] parts = input.Split('.');
@@ -87,6 +85,13 @@ namespace Homework2
             // Використовуємо властивості — вони самі виконують перевірки
             IntegerPart = intPart;
             Pennies = penniesPart;
+        }
+
+        public static void CheckAmount(string input)
+        {
+            if (!amountRegex.IsMatch(input))
+                throw new InvalidDataException("Invalid money format. " +
+                    "Must be a positive number with up to two decimal digits, using a dot as separator.");
         }
 
         public override int GetHashCode() => HashCode.Combine(Currency, IntegerPart, Pennies);

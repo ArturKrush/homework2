@@ -55,12 +55,6 @@ namespace Homework2
             get;
         }
 
-        /*public double Amount
-        {
-            get { return integerPart + (double)pennies / 100; }
-            private set { }
-        }*/
-
         public void PrintAmount()
         {
             string result = (IntegerPart + ((double)Pennies / 100)).ToString("F2", System.Globalization.CultureInfo.InvariantCulture);

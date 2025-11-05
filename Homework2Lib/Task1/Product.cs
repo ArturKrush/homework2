@@ -25,10 +25,12 @@ namespace Homework2
             private set;
         }
 
-        public Product(string name, CURR currency, int integer, int pennies)
+        public record struct MoneyArgs(CURR Currency, int Integer, int Pennies);
+
+        public Product(string name, MoneyArgs args)
         {
             Name = name;
-            Price = new Money(currency, integer, pennies);
+            Price = new Money(args.Currency, args.Integer, args.Pennies); ;
         }
 
         public void IncreasePrice(string input)

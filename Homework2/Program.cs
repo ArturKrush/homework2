@@ -9,8 +9,7 @@ namespace Homework2
         public static void Main(string[] args)
         {
             //1 argument - currency, 2 - integer part, 3 - pennies
-
-            /*Money money = new(CURR.UAH, 10, 50);
+            Money money = new(CURR.UAH, 10, 50);
             money.PrintAmount(); // 10.50 UAH
             money.SetAmount("20.1");
             money.PrintAmount(); // 20.10 UAH
@@ -21,7 +20,6 @@ namespace Homework2
 
             Money money4 = new(CURR.USD, 2225, 15);
             Console.WriteLine(money3.Equals(money4)); //False
-            
 
             Product product = new("SmartTV", new MoneyArgs(CURR.UAH, 10000, 50));
             product.IncreasePrice("1000.55");
@@ -34,6 +32,8 @@ namespace Homework2
             Product product3 = new("Smartphone", new MoneyArgs(CURR.UAH, 8000, 60));
             product3.DecreasePrice("7000.70");
             product3.Price.PrintAmount(); // Результат: 999.90 UAH*/
+
+            Console.WriteLine();
 
             List<MusicalInstrument> orchestra = new List<MusicalInstrument>();
 
@@ -72,6 +72,11 @@ namespace Homework2
                 instrument.Desc();
                 instrument.History();
             }
+
+            DecimalNumber decimalNumber = new DecimalNumber(255);
+            Console.WriteLine(decimalNumber.ToBinary());
+            Console.WriteLine(decimalNumber.ToOctal());
+            Console.WriteLine(decimalNumber.ToHex());
         }
     }
 }
